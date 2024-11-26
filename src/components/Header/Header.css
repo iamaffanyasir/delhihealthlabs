@@ -1,0 +1,30 @@
+.top-header {
+  background-color: #f8f9fa;
+  padding: 10px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left .contact-info {
+  display: flex;
+  gap: 20px;
+}
+
+.header-right .top-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.header-right .top-nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.header-right .top-nav a:hover {
+  color: #007bff;
+} 

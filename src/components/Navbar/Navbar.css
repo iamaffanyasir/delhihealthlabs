@@ -1,0 +1,61 @@
+.main-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo a {
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-home-visit {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-upload {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.user-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.user-actions a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+} 
