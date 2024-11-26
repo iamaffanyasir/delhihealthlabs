@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './HomeVisitBanner.css';
+import { FaHome, FaMapMarkerAlt, FaCheck, FaTimes } from 'react-icons/fa';
 
 const HomeVisitBanner = () => {
   const [pincode, setPincode] = useState('');
   const [isAvailable, setIsAvailable] = useState(null);
 
   const checkAvailability = () => {
-    // Simulate availability check
     const available = pincode.length === 6;
     setIsAvailable(available);
   };
@@ -16,7 +16,7 @@ const HomeVisitBanner = () => {
       <div className="banner-content">
         <div className="banner-text">
           <div className="icon-container">
-            <span className="icon">🏠</span>
+            <FaHome className="icon" />
           </div>
           <div className="text-content">
             <h3>Book a Home Visit</h3>
@@ -25,13 +25,16 @@ const HomeVisitBanner = () => {
         </div>
         <div className="banner-form">
           <div className="input-group">
-            <input 
-              type="text" 
-              placeholder="Enter your pincode" 
-              value={pincode}
-              onChange={(e) => setPincode(e.target.value.slice(0, 6))}
-              maxLength={6}
-            />
+            <div className="input-with-icon">
+              <FaMapMarkerAlt className="input-icon" />
+              <input 
+                type="text" 
+                placeholder="Enter your pincode" 
+                value={pincode}
+                onChange={(e) => setPincode(e.target.value.slice(0, 6))}
+                maxLength={6}
+              />
+            </div>
             <button className="check-btn" onClick={checkAvailability}>
               Check Availability
             </button>
@@ -39,8 +42,8 @@ const HomeVisitBanner = () => {
           {isAvailable !== null && (
             <div className={`availability-message ${isAvailable ? 'available' : 'not-available'}`}>
               {isAvailable 
-                ? "✅ Great! We provide home collection in your area." 
-                : "❌ Sorry, we currently don't serve in this area."}
+                ? <><FaCheck className="status-icon" /> Great! We provide home collection in your area.</> 
+                : <><FaTimes className="status-icon" /> Sorry, we currently don't serve in this area.</>}
             </div>
           )}
         </div>

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './HealthPackages.css';
+import { FaCheck, FaClock, FaArrowRight, FaRegCalendarAlt, FaRegClock } from 'react-icons/fa';
+import { BiTestTube } from 'react-icons/bi';
 
 const HealthPackages = () => {
   const [selectedDuration, setSelectedDuration] = useState('yearly');
@@ -11,7 +13,8 @@ const HealthPackages = () => {
       monthlyPrice: "1499",
       yearlyPrice: "999",
       features: ["Complete Blood Count", "Liver Function", "Kidney Function", "Blood Sugar"],
-      color: "#007bff"
+      color: "#007bff",
+      icon: <BiTestTube />
     },
     {
       name: "Comprehensive",
@@ -20,7 +23,8 @@ const HealthPackages = () => {
       yearlyPrice: "2499",
       features: ["Basic Tests +", "Thyroid Profile", "Vitamin Tests", "Cardiac Risk"],
       recommended: true,
-      color: "#28a745"
+      color: "#28a745",
+      icon: <BiTestTube />
     },
     {
       name: "Executive",
@@ -28,7 +32,8 @@ const HealthPackages = () => {
       monthlyPrice: "5999",
       yearlyPrice: "4999",
       features: ["Comprehensive +", "Cancer Markers", "Hormone Analysis", "Expert Consult"],
-      color: "#6f42c1"
+      color: "#6f42c1",
+      icon: <BiTestTube />
     }
   ];
 
@@ -43,11 +48,12 @@ const HealthPackages = () => {
           <div className="duration-toggle">
             <span className={selectedDuration === 'monthly' ? 'active' : ''} 
                   onClick={() => setSelectedDuration('monthly')}>
-              Monthly
+              <FaRegCalendarAlt className="toggle-icon" /> Monthly
             </span>
             <span className={selectedDuration === 'yearly' ? 'active' : ''} 
                   onClick={() => setSelectedDuration('yearly')}>
-              Yearly <span className="save-badge">-20%</span>
+              <FaRegCalendarAlt className="toggle-icon" /> Yearly 
+              <span className="save-badge">-20%</span>
             </span>
           </div>
         </div>
@@ -59,8 +65,11 @@ const HealthPackages = () => {
               {pkg.recommended && <div className="recommended-badge">Popular</div>}
               <div className="package-top">
                 <div>
+                  <div className="package-icon">{pkg.icon}</div>
                   <h3>{pkg.name}</h3>
-                  <span className="tests-count">{pkg.tests}</span>
+                  <span className="tests-count">
+                    <BiTestTube className="test-icon" /> {pkg.tests}
+                  </span>
                 </div>
                 <div className="price-section">
                   <span className="currency">₹</span>
@@ -72,15 +81,23 @@ const HealthPackages = () => {
               </div>
               <ul className="features">
                 {pkg.features.map((feature, idx) => (
-                  <li key={idx}>✓ {feature}</li>
+                  <li key={idx}>
+                    <FaCheck className="feature-icon" /> {feature}
+                  </li>
                 ))}
               </ul>
-              <button className="book-package">Book Now</button>
+              <button className="book-package">
+                Book Now <FaArrowRight className="btn-icon" />
+              </button>
+              <div className="package-footer">
+                <span><FaRegClock className="footer-icon" /> Report in 24 hours</span>
+                <span><FaClock className="footer-icon" /> Valid for 3 months</span>
+              </div>
             </div>
           ))}
         </div>
         <div className="view-all">
-          <a href="/packages">View All Packages →</a>
+          <a href="/packages">View All Packages <FaArrowRight className="link-icon" /></a>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './HeroSection.css';
+import { FaChevronLeft, FaChevronRight, FaArrowRight } from 'react-icons/fa';
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -10,21 +11,24 @@ const HeroSection = () => {
       subtitle: "BUT NOW #CareComesHome",
       description: "Book a home visit with Delhi Health Labs for blood tests",
       image: "/images/hero/slide1.jpg",
-      buttonText: "Book Now"
+      buttonText: "Book Now",
+      icon: <FaArrowRight />
     },
     {
       title: "ACCURATE DIAGNOSTICS",
       subtitle: "State-of-the-art Laboratory",
       description: "Get precise results with our advanced testing facilities",
       image: "/images/hero/slide2.jpg",
-      buttonText: "Learn More"
+      buttonText: "Learn More",
+      icon: <FaArrowRight />
     },
     {
       title: "HEALTH PACKAGES",
       subtitle: "Comprehensive Check-ups",
       description: "Choose from our wide range of health packages",
       image: "/images/hero/slide3.jpg",
-      buttonText: "View Packages"
+      buttonText: "View Packages",
+      icon: <FaArrowRight />
     }
   ];
 
@@ -55,12 +59,19 @@ const HeroSection = () => {
             <h1>{slide.title}</h1>
             <h2>{slide.subtitle}</h2>
             <p>{slide.description}</p>
-            <button className="slide-btn">{slide.buttonText}</button>
+            <button className="slide-btn">
+              {slide.buttonText}
+              <span className="btn-icon">{slide.icon}</span>
+            </button>
           </div>
         </div>
       ))}
-      <button className="carousel-btn prev" onClick={prevSlide}>❮</button>
-      <button className="carousel-btn next" onClick={nextSlide}>❯</button>
+      <button className="carousel-btn prev" onClick={prevSlide}>
+        <FaChevronLeft />
+      </button>
+      <button className="carousel-btn next" onClick={nextSlide}>
+        <FaChevronRight />
+      </button>
       <div className="carousel-dots">
         {slides.map((_, index) => (
           <span 

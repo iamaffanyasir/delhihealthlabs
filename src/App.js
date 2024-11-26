@@ -1,8 +1,8 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Header from './components/Header/Header';
-import HomeVisitBanner from './components/HomeVisitBanner/HomeVisitBanner';
 import HeroSection from './components/HeroSection/HeroSection';
+import HomeVisitBanner from './components/HomeVisitBanner/HomeVisitBanner';
 import BookingSection from './components/BookingSection/BookingSection';
 import HealthPackages from './components/HealthPackages/HealthPackages';
 import PopularTests from './components/PopularTests/PopularTests';
@@ -17,15 +17,17 @@ function App() {
     <div className="App">
       <Header />
       <Navbar />
-      <HomeVisitBanner />
       <HeroSection />
-      <BookingSection />
-      <HealthPackages />
-      <PopularTests />
-      <HealthRisks />
-      <WhyChooseUs />
-      <LatestBlogs />
-      <Testimonials />
+      <div className="main-content">
+        <HomeVisitBanner />
+        <WhyChooseUs />
+        <HealthPackages />
+        <PopularTests />
+        <BookingSection />
+        <HealthRisks />
+        <Testimonials />
+        <LatestBlogs />
+      </div>
       <Footer />
     </div>
   );

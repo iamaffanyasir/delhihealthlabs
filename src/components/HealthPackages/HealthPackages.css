@@ -54,6 +54,11 @@
   font-size: 12px;
   color: #28a745;
   font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.duration-toggle span.active .save-badge {
+  color: white;
 }
 
 .package-cards {
@@ -193,4 +198,70 @@
   .package-cards {
     grid-template-columns: 1fr;
   }
+}
+
+.toggle-icon {
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.package-icon {
+  font-size: 24px;
+  color: var(--package-color);
+  margin-bottom: 10px;
+}
+
+.test-icon {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.feature-icon {
+  margin-right: 8px;
+  color: var(--package-color);
+  font-size: 14px;
+}
+
+.btn-icon {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.book-package:hover .btn-icon {
+  transform: translateX(5px);
+}
+
+.package-footer {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 13px;
+  color: #666;
+}
+
+.footer-icon {
+  margin-right: 5px;
+  color: var(--package-color);
+}
+
+.link-icon {
+  margin-left: 5px;
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.view-all a:hover .link-icon {
+  transform: translateX(5px);
+}
+
+.book-package {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
 } 

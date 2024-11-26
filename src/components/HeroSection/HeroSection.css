@@ -17,6 +17,22 @@
   background-position: center;
 }
 
+.carousel-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  z-index: 1;
+}
+
 .carousel-slide.active {
   opacity: 1;
 }
@@ -29,23 +45,28 @@
   color: white;
   max-width: 600px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 
 .slide-content h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
   color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .slide-content h2 {
   font-size: 1.8rem;
   margin-bottom: 20px;
   color: #00ff9d;
+  font-weight: 600;
 }
 
 .slide-content p {
   font-size: 1.2rem;
   margin-bottom: 30px;
+  line-height: 1.6;
 }
 
 .slide-btn {
@@ -57,11 +78,19 @@
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .slide-btn:hover {
   background: #00cc7d;
   transform: translateY(-2px);
+}
+
+.slide-btn:hover .btn-icon {
+  transform: translateX(5px);
 }
 
 .carousel-btn {
@@ -77,6 +106,11 @@
   border-radius: 50%;
   transition: background 0.3s ease;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
 }
 
 .carousel-btn:hover {
@@ -112,6 +146,10 @@
 
 .dot.active {
   background: #00ff9d;
+}
+
+.btn-icon {
+  transition: transform 0.3s ease;
 }
 
 @media (max-width: 768px) {

@@ -1,4 +1,107 @@
 .App {
-  text-align: center;
-  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add spacing between sections */
+.main-content > * {
+  margin-bottom: 40px;
+}
+
+.main-content > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Add section transitions */
+.main-content > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add section animations with delay */
+.main-content > *:nth-child(1) { animation-delay: 0.1s; }
+.main-content > *:nth-child(2) { animation-delay: 0.2s; }
+.main-content > *:nth-child(3) { animation-delay: 0.3s; }
+.main-content > *:nth-child(4) { animation-delay: 0.4s; }
+.main-content > *:nth-child(5) { animation-delay: 0.5s; }
+.main-content > *:nth-child(6) { animation-delay: 0.6s; }
+.main-content > *:nth-child(7) { animation-delay: 0.7s; }
+.main-content > *:nth-child(8) { animation-delay: 0.8s; }
+
+/* Add container width consistency */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Add responsive padding */
+@media (max-width: 768px) {
+  .main-content > * {
+    margin-bottom: 30px;
+  }
+}
+
+/* Add scroll to top button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #007bff;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Add section backgrounds */
+.main-content > *:nth-child(odd) {
+  background-color: #f8f9fa;
+}
+
+.main-content > *:nth-child(even) {
+  background-color: #ffffff;
+}
+
+/* Add container padding */
+.main-content > * {
+  padding: 60px 0;
+}
+
+/* Add responsive adjustments */
+@media (max-width: 768px) {
+  .main-content > * {
+    padding: 40px 0;
+  }
 }
